@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "rsuite/dist/styles/rsuite-dark.css";
+// import "rsuite/dist/rsuite.min.css";
 import { useDispatch } from "react-redux";
 // import { Counter } from './features/counter/Counter';
 import Todos from "./features/todos/Todos";
 import Posts from "./features/posts/Posts";
 import Users from "./features/users/Users";
+import { add } from "./features/todos/TodosSlice";
 import {
   Button,
   Container,
