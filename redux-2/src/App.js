@@ -1,81 +1,52 @@
 import React from "react";
 import { useState } from "react";
-import "rsuite/dist/styles/rsuite-dark.css";
-// import "rsuite/dist/rsuite.min.css";
 import { useDispatch } from "react-redux";
 // import { Counter } from './features/counter/Counter';
-import Todos from "./features/todos/Todos";
-import Posts from "./features/posts/Posts";
-import Users from "./features/users/Users";
-import { add } from "./features/todos/TodosSlice";
-import {
-  Button,
-  Container,
-  Header,
-  Navbar,
-  Content,
-  Panel,
-  Form,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  ButtonToolbar,
-  Divider,
-  FlexboxGrid,
-} from "rsuite";
+import Todos from "./features/todos/Todos.js";
+// import Posts from "./features/posts/Posts";
+// import Users from "./features/users/Users";
+import { add } from "./features/todos/todosSlice";
+
 import "./App.css";
-import FlexboxGridItem from "rsuite/esm/FlexboxGrid/FlexboxGridItem";
+
 function App() {
   const [todoTxt, setTodoTxt] = useState("");
   const dispatch = useDispatch();
   return (
     <div className="main">
-      <Container>
-        <Header>
-          <Navbar appearance="inverse">
-            <Navbar.Header>
-              <p className="navbar-brand">Redux React TODO</p>
-            </Navbar.Header>
-          </Navbar>
-        </Header>
-        <Content>
-          <FlexboxGrid justify="center">
-            <FlexboxGridItem colspan={12}>
-              <Panel header={<h3>Add ToDo</h3>} bordered>
-                <Form fluid>
-                  <FormGroup>
-                    <ControlLabel>What you want to do ? </ControlLabel>
-                    <FormControl
-                      name="task"
-                      value={todoTxt}
-                      onChange={setTodoTxt}
-                    />
-                  </FormGroup>
-                  <FormGroup>
-                    <ButtonToolbar>
-                      <Button
-                        appearance="primary"
-                        onClick={() => {
-                          dispatch(
-                            add({ txt: todoTxt, id: Date.now().toString() })
-                          );
-                          setTodoTxt("");
-                        }}
-                      >
-                        Create
-                      </Button>
-                    </ButtonToolbar>
-                  </FormGroup>
-                </Form>
-              </Panel>
-              <Divider />
-              <Todos />
-              <Posts />
-              <Users />
-            </FlexboxGridItem>
-          </FlexboxGrid>
-        </Content>
-      </Container>
+      <div className="container">
+        <header>
+          <nav className="nav-bar">
+            <h1>React Radux TODO (:</h1>
+          </nav>
+        </header>
+        <main>
+          <div className="header">
+            <h2>Add Todo :</h2>
+          </div>
+          <form>
+            <label htmlFor="">What you want to do ?</label>
+            <input
+              type="text"
+              name="task"
+              value={todoTxt}
+              onChange={setTodoTxt}
+            />
+            <button
+              onClick={() => {
+                dispatch(add({ txt: todoTxt, id: Date.now().toString() }));
+                setTodoTxt("");
+              }}
+            >
+              {" "}
+              create
+            </button>
+          </form>
+          <div className="todos">
+            <Todos />
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
