@@ -45,10 +45,10 @@ function App() {
               create
             </button>
           </form>
-          <div className="todos">
-            <Todos />
-          </div>
         </main>
+        <div className="todos">
+          <Todos />
+        </div>
       </div>
     </div>
   );
