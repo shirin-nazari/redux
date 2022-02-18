@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
+// get todo from todo reducer
 import Todos from "./features/todos/Todos.js";
 // import Posts from "./features/posts/Posts";
 // import Users from "./features/users/Users";
@@ -46,6 +46,7 @@ function App() {
             </button>
           </form>
         </main>
+        {/* card todo */}
         <div className="todos">
           <Todos />
         </div>
