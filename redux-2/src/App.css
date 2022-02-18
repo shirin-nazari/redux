@@ -7,7 +7,8 @@ body {
   justify-content: center;
 }
 .container {
-  background-color: rgb(66, 66, 66);
+  /* background-color: rgb(66, 66, 66); */
+  border: 3px solid rgb(66, 66, 66);
   width: 600px;
   margin: 20px;
   color: white;
@@ -16,7 +17,7 @@ body {
   height: 400px;
 }
 .container header {
-  background-color: rgb(29, 29, 29);
+  background-color: rgba(29, 29, 29, 0.5);
   padding: 25px;
   border-radius: 25px 25px 0px 0px;
   font-size: 25px;
@@ -47,5 +48,12 @@ main form button {
   border-radius: 8px;
   background-color: rgb(0, 120, 124);
   color: #fff;
+  font-weight: bold;
+}
+/* for card */
+.todos {
+  /* background-color: beige; */
+  color: #fff;
+  text-align: center;
   font-weight: bold;
 }

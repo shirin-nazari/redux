@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-// import { Counter } from './features/counter/Counter';
+
 import Todos from "./features/todos/Todos.js";
 // import Posts from "./features/posts/Posts";
 // import Users from "./features/users/Users";
@@ -30,11 +30,14 @@ function App() {
               type="text"
               name="task"
               value={todoTxt}
-              onChange={setTodoTxt}
+              onChange={(e) => setTodoTxt(e.target.value)}
             />
             <button
-              onClick={() => {
-                dispatch(add({ txt: todoTxt, id: Date.now().toString() }));
+              onClick={(e) => {
+                e.preventDefault();
+                // { txt: todoTxt, id: Date.now().toString() }
+                dispatch(add(todoTxt));
+                // for empty input
                 setTodoTxt("");
               }}
             >
