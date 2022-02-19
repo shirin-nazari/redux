@@ -71,3 +71,8 @@ main form button {
 .todos ol {
   border: 3px solid rgb(66, 66, 66);
 }
+.fa-solid {
+  color: #fff;
+  font-size: 20px;
+  float: right;
+}
