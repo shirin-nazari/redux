@@ -7,6 +7,7 @@ export default function Todos() {
       {todos.map((todo, index) => (
         <li key={index}>
           {todo}
+          {/* for delete */}
           <i className="fa-solid fa-trash-can"></i>
         </li>
       ))}
