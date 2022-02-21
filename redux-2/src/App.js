@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 // get todo from todo reducer
 import Todos from "./features/todos/Todos.js";
 import Posts from "./features/posts/Posts";
-// import Users from "./features/users/Users";
+import Users from "./features/users/Users.js";
+
 import { add } from "./features/todos/todosSlice";
 
 import "./App.css";
@@ -50,6 +51,7 @@ function App() {
         <div className="todos">
           <Todos />
           <Posts />
+          <Users />
         </div>
       </div>
     </div>
