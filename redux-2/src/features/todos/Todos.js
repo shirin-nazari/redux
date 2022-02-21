@@ -1,14 +1,18 @@
-import { useSelector } from "react-redux";
-import { selectTodos } from "./todosSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectTodos, del } from "./todosSlice";
 export default function Todos() {
   const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
   return (
     <ol>
-      {todos.map((todo, index) => (
-        <li key={index}>
-          {todo}
+      {todos.map(({ txt, id }) => (
+        <li key={id}>
+          {txt}
           {/* for delete */}
-          <i className="fa-solid fa-trash-can"></i>
+          <i
+            className="fa-solid fa-trash-can"
+            onClick={() => dispatch(del(id))}
+          ></i>
         </li>
       ))}
     </ol>
