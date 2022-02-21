@@ -75,4 +75,13 @@ main form button {
   color: #fff;
   font-size: 20px;
   float: right;
+  padding: 5px;
+}
+span {
+  color: #fff;
+}
+.fa-solid .fa-trash {
+  margin: 20px;
+  color: #fff;
+  font-size: 25px;
 }
