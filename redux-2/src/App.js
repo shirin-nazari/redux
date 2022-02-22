@@ -12,6 +12,7 @@ import "./App.css";
 
 function App() {
   const [todoTxt, setTodoTxt] = useState("");
+
   const dispatch = useDispatch();
   return (
     <div className="main">
