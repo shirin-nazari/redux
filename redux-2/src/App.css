@@ -85,3 +85,9 @@ span {
   color: #fff;
   font-size: 25px;
 }
+.update {
+  display: none;
+}
+.update-visible {
+  display: inline;
+}
