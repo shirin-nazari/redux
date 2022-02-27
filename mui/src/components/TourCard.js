@@ -33,7 +33,7 @@ const theme = createTheme({
   },
 });
 
-export default function TourCard() {
+export default function TourCard({ tour }) {
   return (
     //   Paper
     //   variant for outline becuase dont box-shadow
@@ -46,18 +46,14 @@ export default function TourCard() {
       {" "}
       <ThemeProvider theme={theme}>
         <Paper elevation={3} square>
-          <img
-            src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
-            alt=""
-            className="img"
-          />
+          <img src={tour.image} alt="" className="img" />
           {/* componeent for element make tag inside to site and variant for size /////////for typography*/}
           {/* paddigX for left and right  */}
           {/* paddingY for top and bottom */}
           <Box paddingX={1}>
             {" "}
             <Typography variant="subtitle1" component="h2">
-              immers into the falls
+              {tour.name}
             </Typography>{" "}
             <Box
               sx={{
@@ -68,7 +64,7 @@ export default function TourCard() {
               {" "}
               <AccessTime sx={{ width: 12.5 }} />
               <Typography variant="body2" component="p" marginLeft={0.5}>
-                5 hours
+                {tour.duration} hours
               </Typography>
             </Box>
             <Box
@@ -81,21 +77,21 @@ export default function TourCard() {
               {/* precision for nim of half star  */}
               <Rating
                 name="read-only"
-                value={4.5}
+                value={tour.rating}
                 readOnly
                 precision={0.5}
                 size="small"
               />
               <Typography variant="body2" component="p" marginLeft={0.5}>
-                4.5
+                {tour.rating}
               </Typography>
               <Typography variant="body3" component="p" marginLeft={0.5}>
-                (655 reviews)
+                ({tour.numberOfReviews} reviews)
               </Typography>
             </Box>
             <Box>
               <Typography variant="h6" component="h3" marginTop={0}>
-                from C $465
+                from C ${tour.price}
               </Typography>
             </Box>
           </Box>
