@@ -1,7 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { BottomNavigation, Box, Paper, Typography } from "@mui/material";
 import Container from "@mui/material/Container";
 import React from "react";
+import CustomizedAccordions from "../components/Accordin";
 import ImageCollage from "../components/ImageCollage";
+import BasicModal from "../components/Modal";
 
 export default function Tour() {
   return (
@@ -21,7 +23,28 @@ export default function Tour() {
         <Typography variant="h6" component="h4" marginTop={3}>
           About this ticket
         </Typography>
+        <Typography variant="paragraph" component="p" marginTop={3}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et laudantium
+          suscipit inventore illo debitis nemo exercitationem soluta numquam
+          quos, sequi facilis. Quisquam possimus ad doloribus, aspernatur maxime
+          provident? Natus dolorum accusantium architecto dolor corrupti autem
+          itaque quas corporis numquam enim?
+        </Typography>
       </Box>
+      <Box marginBottom={10}>
+        <Typography variant="h6" component="h4" marginTop={3} marginBottom={2}>
+          freequntly Asked Questions
+        </Typography>
+        <CustomizedAccordions />
+      </Box>
+      <Paper
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+        elevation={3}
+      >
+        <BottomNavigation showLabels>
+          <BasicModal />
+        </BottomNavigation>
+      </Paper>
     </Container>
   );
 }
